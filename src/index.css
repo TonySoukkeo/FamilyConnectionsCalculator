@@ -1,13 +1,27 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#calculator {
+  margin-top: 100px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+#calculator .card {
+  height: 100%;
+}
+
+.icon {
+  position: relative;
+  top: 3px;
+  margin-right: 15px;
+}
+
+.label {
+  font-size: 1.4rem;
+}
+
+.input-label {
+  margin-left: 80px;
+}
+
+.status-btn {
+  width: 100px;
+  height: 30px;
+  background: blue;
 }
