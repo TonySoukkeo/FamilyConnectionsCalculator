@@ -1,36 +1,42 @@
 import React from "react";
 
-const PayStatus = ({ payStateChange }) => {
+const status = [
+  {
+    id: 1,
+    name: "Weekly"
+  },
+  {
+    id: 2,
+    name: "Monthly"
+  },
+  {
+    id: 3,
+    name: "Bi-Weekly"
+  },
+  {
+    id: 4,
+    name: "Bi-Monthly"
+  }
+];
+
+const PayStatus = ({ payStateChange, clientPayStatus }) => {
   return (
     <div className="row ">
       <div className="m-auto">
-        <span
-          onClick={() => payStateChange("weekly")}
-          className="btn btn-primary mr-2"
-        >
-          Weekly
-        </span>
-        <span
-          onClick={() => payStateChange("monthly")}
-          name="monthly"
-          className="btn btn-primary mr-2"
-        >
-          Monthly
-        </span>
-        <span
-          onClick={() => payStateChange("bi-weekly")}
-          name="bi-weekly"
-          className="btn btn-primary mr-2"
-        >
-          Bi-Weekly
-        </span>
-        <span
-          onClick={() => payStateChange("bi-monthly")}
-          name="bi-monthly"
-          className="btn btn-primary"
-        >
-          Bi-Monthly
-        </span>
+        {console.log(clientPayStatus)}
+        {status.map(x => (
+          <span
+            key={x.id}
+            onClick={() => payStateChange(x.name.toLowerCase())}
+            className={
+              clientPayStatus === x.name.toLowerCase()
+                ? "btn btn-success mr-2"
+                : "btn btn-outline-success mr-2"
+            }
+          >
+            {x.name}
+          </span>
+        ))}
       </div>
     </div>
   );

@@ -34,6 +34,12 @@ class CalculatorForm extends Component {
         calcBiMonthly(numberOfHours, hourlyWage);
       }
     }
+
+    this.setState({
+      clientPayStatus: "",
+      numberOfHours: "",
+      hourlyWage: ""
+    });
   };
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -41,7 +47,7 @@ class CalculatorForm extends Component {
   payStateChange = status => this.setState({ clientPayStatus: status });
 
   render() {
-    const { numberOfHours, hourlyWage } = this.state;
+    const { numberOfHours, hourlyWage, clientPayStatus } = this.state;
 
     return (
       <form onSubmit={this.calculateSubmit}>
@@ -51,7 +57,10 @@ class CalculatorForm extends Component {
           </span>{" "}
           <span className="label"> Select the client status</span>
         </p>
-        <PayStatus payStateChange={this.payStateChange} />
+        <PayStatus
+          clientPayStatus={clientPayStatus}
+          payStateChange={this.payStateChange}
+        />
         <div className="row">
           <div className="col-12 m-auto">
             <div className="input-group mt-5">
@@ -89,7 +98,7 @@ class CalculatorForm extends Component {
   }
 }
 
-const mapState = {
+const actions = {
   calcWeekly,
   calcMonthly,
   calcBiWeekly,
@@ -98,5 +107,5 @@ const mapState = {
 
 export default connect(
   null,
-  mapState
+  actions
 )(CalculatorForm);
