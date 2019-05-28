@@ -2,7 +2,9 @@
   "name": "family_connections_calculator",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://TonySoukkeo.github.io/FamilyConnectionsCalculator",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
@@ -13,7 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
