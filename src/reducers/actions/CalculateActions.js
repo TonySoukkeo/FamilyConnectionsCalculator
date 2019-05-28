@@ -2,7 +2,8 @@ import {
   CALCULATE_WEEKLY,
   CALCULATE_MONTHLY,
   CALCULATE_BI_WEEKLY,
-  CALCULATE_BI_MONTHLY
+  CALCULATE_BI_MONTHLY,
+  SHOW_RESULTS
 } from "../constants/CalculateConstants";
 
 const monthAndWeekRate = 4.33,
@@ -20,7 +21,8 @@ export const calcWeekly = (hours, wage) => {
     type: CALCULATE_WEEKLY,
     payload: {
       monthlyHours,
-      grossIncome
+      grossIncome,
+      showResults: true
     }
   };
 };
@@ -35,7 +37,8 @@ export const calcMonthly = (hours, wage) => {
     type: CALCULATE_MONTHLY,
     payload: {
       monthlyHours,
-      grossIncome
+      grossIncome,
+      showResults: true
     }
   };
 };
@@ -54,7 +57,8 @@ export const calcBiMonthly = (hours, wage) => {
     type: CALCULATE_BI_MONTHLY,
     payload: {
       monthlyHours,
-      grossIncome
+      grossIncome,
+      showResults: true
     }
   };
 };
@@ -74,7 +78,15 @@ export const calcBiWeekly = (hours, wage) => {
     type: CALCULATE_BI_WEEKLY,
     payload: {
       monthlyHours,
-      grossIncome
+      grossIncome,
+      showResults: true
     }
+  };
+};
+
+export const showResults = value => {
+  return {
+    type: SHOW_RESULTS,
+    payload: value
   };
 };

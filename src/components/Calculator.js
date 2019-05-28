@@ -19,7 +19,7 @@ class Calculator extends Component {
           <div className="col-md-5">
             <div id="results">
               <div className="card">
-                <div className="card-body">
+                <div className="card-body m-auto">
                   <Results />
                 </div>
               </div>

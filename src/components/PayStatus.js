@@ -23,7 +23,6 @@ const PayStatus = ({ payStateChange, clientPayStatus }) => {
   return (
     <div className="row ">
       <div className="m-auto">
-        {console.log(clientPayStatus)}
         {status.map(x => (
           <span
             key={x.id}

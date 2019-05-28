@@ -5,7 +5,8 @@ import {
   calcWeekly,
   calcMonthly,
   calcBiWeekly,
-  calcBiMonthly
+  calcBiMonthly,
+  showResults
 } from "../reducers/actions/CalculateActions";
 
 class CalculatorForm extends Component {
@@ -19,27 +20,62 @@ class CalculatorForm extends Component {
     e.preventDefault();
 
     const { clientPayStatus, numberOfHours, hourlyWage } = this.state,
-      { calcWeekly, calcMonthly, calcBiWeekly, calcBiMonthly } = this.props;
+      {
+        calcWeekly,
+        calcMonthly,
+        calcBiWeekly,
+        calcBiMonthly,
+        showResults
+      } = this.props;
 
     if (clientPayStatus === "" || numberOfHours === "" || hourlyWage === "") {
       alert("PLease fill out all forms");
     } else {
       if (clientPayStatus === "weekly") {
-        calcWeekly(numberOfHours, hourlyWage);
+        showResults(true);
+        setTimeout(
+          function() {
+            calcWeekly(numberOfHours, hourlyWage);
+          }.bind(this),
+          1000
+        );
       } else if (clientPayStatus === "monthly") {
-        calcMonthly(numberOfHours, hourlyWage);
+        showResults(true);
+        setTimeout(
+          function() {
+            calcMonthly(numberOfHours, hourlyWage);
+          }.bind(this),
+          1000
+        );
       } else if (clientPayStatus === "bi-weekly") {
-        calcBiWeekly(numberOfHours, hourlyWage);
+        showResults(true);
+        setTimeout(
+          function() {
+            calcBiWeekly(numberOfHours, hourlyWage);
+          }.bind(this),
+          1000
+        );
       } else {
-        calcBiMonthly(numberOfHours, hourlyWage);
+        showResults(true);
+        setTimeout(
+          function() {
+            calcBiMonthly(numberOfHours, hourlyWage);
+          }.bind(this),
+          1000
+        );
       }
     }
 
-    this.setState({
-      clientPayStatus: "",
-      numberOfHours: "",
-      hourlyWage: ""
-    });
+    setTimeout(
+      function() {
+        this.setState({
+          clientPayStatus: "",
+          numberOfHours: "",
+          hourlyWage: ""
+        });
+      }.bind(this),
+      2000
+    );
   };
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -51,12 +87,7 @@ class CalculatorForm extends Component {
 
     return (
       <form onSubmit={this.calculateSubmit}>
-        <p className="input-label">
-          <span className="icon">
-            <i className="fas fa-arrow-right fa-2x" />
-          </span>{" "}
-          <span className="label"> Select the client status</span>
-        </p>
+        <p className="input-label">Select pay frequency</p>
         <PayStatus
           clientPayStatus={clientPayStatus}
           payStateChange={this.payStateChange}
@@ -102,7 +133,8 @@ const actions = {
   calcWeekly,
   calcMonthly,
   calcBiWeekly,
-  calcBiMonthly
+  calcBiMonthly,
+  showResults
 };
 
 export default connect(
