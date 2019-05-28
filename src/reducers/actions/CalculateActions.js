@@ -3,13 +3,18 @@ import {
   CALCULATE_MONTHLY,
   CALCULATE_BI_WEEKLY,
   CALCULATE_BI_MONTHLY,
+  CALC_CREDITS,
+  LOADED,
+  CHANGE_CALC_TYPE,
   SHOW_RESULTS
 } from "../constants/CalculateConstants";
 
 const monthAndWeekRate = 4.33,
   biMonthlyRate = 2,
   biWeeklyRate1 = 2,
-  biWeeklyRate2 = 2.15;
+  biWeeklyRate2 = 2.15,
+  schoolMonthlyRate = 4.33,
+  schoolAuthorizationRate = 3;
 
 export const calcWeekly = (hours, wage) => {
   const hoursPerWeek = Number(hours).toFixed(2),
@@ -38,7 +43,8 @@ export const calcMonthly = (hours, wage) => {
     payload: {
       monthlyHours,
       grossIncome,
-      showResults: true
+      showResults: true,
+      loaded: true
     }
   };
 };
@@ -58,7 +64,8 @@ export const calcBiMonthly = (hours, wage) => {
     payload: {
       monthlyHours,
       grossIncome,
-      showResults: true
+      showResults: true,
+      loaded: true
     }
   };
 };
@@ -79,7 +86,8 @@ export const calcBiWeekly = (hours, wage) => {
     payload: {
       monthlyHours,
       grossIncome,
-      showResults: true
+      showResults: true,
+      loaded: true
     }
   };
 };
@@ -87,6 +95,34 @@ export const calcBiWeekly = (hours, wage) => {
 export const showResults = value => {
   return {
     type: SHOW_RESULTS,
+    payload: value
+  };
+};
+
+export const calcCredits = credits => {
+  const credit = Number(credits),
+    monthlyHours = (credit * schoolMonthlyRate).toFixed(2),
+    authorizationHours = (credits * schoolAuthorizationRate).toFixed(2);
+  return {
+    type: CALC_CREDITS,
+    payload: {
+      monthlyHours,
+      grossIncome: authorizationHours,
+      loaded: true
+    }
+  };
+};
+
+export const changeCalcType = type => {
+  return {
+    type: CHANGE_CALC_TYPE,
+    payload: type
+  };
+};
+
+export const loaded = value => {
+  return {
+    type: LOADED,
     payload: value
   };
 };

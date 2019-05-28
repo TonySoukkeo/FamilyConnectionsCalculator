@@ -7,19 +7,55 @@ class Results extends Component {
 
     let loading;
 
-    if (calculate.monthlyHours !== "" && calculate.grossIncome !== "") {
+    if (calculate.loaded) {
       loading = (
         <div className="loaded-results">
-          <h3>Monthly hours: {calculate.monthlyHours}</h3>
-          <h3>
-            Gross Income:{" "}
-            <span style={{ color: "green" }}>${calculate.grossIncome}</span>{" "}
-          </h3>
+          <span
+            style={{
+              fontSize: "1.7rem"
+            }}
+          >
+            Monthly hours:
+          </span>{" "}
+          <span
+            style={{
+              fontSize: "2rem",
+              fontWeight: "bold"
+            }}
+          >
+            {" "}
+            {calculate.monthlyHours}
+          </span>
+          <div
+            style={{
+              marginTop: "30px"
+            }}
+          >
+            <span
+              style={{
+                fontSize: "1.7rem"
+              }}
+            >
+              {calculate.calcType === "employment"
+                ? "Gross Income: "
+                : "Authorization hours: "}
+            </span>
+            <span
+              style={{
+                color: "green",
+                fontWeight: "bold",
+                fontSize: "2rem"
+              }}
+            >
+              {calculate.calcType === "employment" ? "$" : ""}
+              {calculate.grossIncome}
+            </span>{" "}
+          </div>
         </div>
       );
     } else {
       loading = (
-        <div style={{ height: "300px" }}>
+        <div style={{ height: "300px", paddingTop: "50px" }}>
           <img style={{ width: "350px" }} src="/assets/loading.gif" alt="" />
         </div>
       );
@@ -31,7 +67,12 @@ class Results extends Component {
           loading
         ) : (
           <div>
-            <div className="d-none d-md-block m-auto pt-5">
+            <div
+              style={{
+                paddingTop: "90px"
+              }}
+              className="d-none d-md-block m-auto"
+            >
               <p
                 style={{
                   fontSize: "2rem"

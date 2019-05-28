@@ -3,7 +3,10 @@ body {
 }
 
 #calculator {
-  margin-top: 200px;
+  margin-top: 135px;
+  -webkit-box-shadow: 6px 9px 16px -7px rgba;
+  -moz-box-shadow: 6px 9px 16px -7px;
+  box-shadow: 6px 9px 16px -7px;
 }
 
 #results {
@@ -12,6 +15,8 @@ body {
 }
 
 #results .card {
+  margin-top: 30px;
+  height: 458px;
   background: #b8c3d0;
 }
 
@@ -20,8 +25,90 @@ body {
 }
 
 .loaded-results {
-  margin-top: 50px;
+  margin-top: 130px;
   margin-bottom: 50px;
+}
+
+#select-type {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 150px;
+}
+
+.calc-type-employment {
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding-top: 12px;
+  padding-left: 19px;
+  height: 50px;
+  width: 140px;
+  border: 0.1px solid black;
+  background: #e0e0e0;
+  -webkit-transition: color 0.2s, background 0.2s, padding-top 0.2s,
+    padding-left 0.2s, font-weight 0.2s; /* Safari */
+  transition: color 0.2s, background 0.2s, padding-top 0.2s, padding-left 0.2s,
+    font-weight 0.2s;
+  -moz-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+
+.calc-type-schooling {
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding-top: 12px;
+  padding-left: 27px;
+  height: 50px;
+  width: 140px;
+  border: 0.1px solid black;
+  background: #e0e0e0;
+  -webkit-transition: color 0.2s, background 0.2s, padding-top 0.2s,
+    padding-left 0.2s, font-weight 0.2s; /* Safari */
+  transition: color 0.2s, background 0.2s, padding-top 0.2s, padding-left 0.2s,
+    font-weight 0.2s;
+  -moz-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+
+.calc-type-schooling:hover {
+  padding-top: 12px;
+  padding-left: 23px;
+  font-weight: bold;
+  background: #474747;
+  color: #ededed;
+}
+
+.calc-type-employment:hover {
+  padding-top: 12px;
+  padding-left: 13px;
+  font-weight: bold;
+  background: #474747;
+  color: #ededed;
+}
+
+.calc-type-schooling-active {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-top: 12px;
+  padding-left: 23px;
+  height: 50px;
+  width: 140px;
+  border: 0.1px solid black;
+  background: #474747;
+  color: #ededed;
+}
+
+.calc-type-employment-active {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-top: 12px;
+  padding-left: 15px;
+  height: 50px;
+  width: 140px;
+  border: 0.1px solid black;
+  background: #474747;
+  color: #ededed;
 }
 
 .input-label {
@@ -41,7 +128,7 @@ body {
   }
 
   #results {
-    margin-top: 200px;
+    margin-top: 137px;
     margin-bottom: 0;
   }
 }
