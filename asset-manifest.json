@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/FamilyConnectionsCalculator/static/css/main.bffaf617.chunk.css",
+    "main.js": "/FamilyConnectionsCalculator/static/js/main.13d21a93.chunk.js",
+    "main.js.map": "/FamilyConnectionsCalculator/static/js/main.13d21a93.chunk.js.map",
+    "runtime~main.js": "/FamilyConnectionsCalculator/static/js/runtime~main.c731e5de.js",
+    "runtime~main.js.map": "/FamilyConnectionsCalculator/static/js/runtime~main.c731e5de.js.map",
+    "static/js/2.1d01dada.chunk.js": "/FamilyConnectionsCalculator/static/js/2.1d01dada.chunk.js",
+    "static/js/2.1d01dada.chunk.js.map": "/FamilyConnectionsCalculator/static/js/2.1d01dada.chunk.js.map",
+    "index.html": "/FamilyConnectionsCalculator/index.html",
+    "precache-manifest.f16f451846bf02815d70cc0daf952960.js": "/FamilyConnectionsCalculator/precache-manifest.f16f451846bf02815d70cc0daf952960.js",
+    "service-worker.js": "/FamilyConnectionsCalculator/service-worker.js",
+    "static/css/main.bffaf617.chunk.css.map": "/FamilyConnectionsCalculator/static/css/main.bffaf617.chunk.css.map"
+  }
+}
