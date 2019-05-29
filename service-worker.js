@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/FamilyConnectionsCalculator/precache-manifest.f16f451846bf02815d70cc0daf952960.js"
+  "/FamilyConnectionsCalculator/precache-manifest.07e8387dbeae14899816247bb10f99e9.js"
 );
 
 self.addEventListener('message', (event) => {
