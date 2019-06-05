@@ -1,9 +1,5 @@
-Hi-Line Climbing Center: Bouldering League
+Family Connections: Calculator
 
-  -  Free to sign up via email and password
-  -  Uses Google Firestore and Firebase for data management
-  -  Users with admin privelages, are able to add, edit, or delete routes
-  -  Normal members can keep track of their progress, by selectecting a route as complete
-	-  Has overall stats tied to each indidual profiles
-	-  Finding a route specifically hard to climb? Check out the comments section on each route to see what each climber has 				 done
-	
+  -  Calculates a clients hourly wage and monthly hours
+  -  Calculations based off the pay rate of the individual client, consisting of > Weekly, monthly, bi-weekly, or bi-monthly
+  -  Does calculations based on schooling status as well. Just input the number of credits they are taking
